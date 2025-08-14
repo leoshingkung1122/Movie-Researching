@@ -7,8 +7,8 @@ function Comment({text, setText}) {
     return (
         <div className="space-y-4">
             <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Comment (optional)</h3>
-                <p className="text-gray-600">Share your thoughts about the selected movie</p>
+                <h3 className="text-2xl font-bold text-cyan-800 mb-2">Comment (optional)</h3>
+                <p className="text-cyan-600 font-medium">Share your thoughts about the selected movie</p>
             </div>
 
             <div className="group relative">
@@ -16,26 +16,26 @@ function Comment({text, setText}) {
                     value={text} 
                     onChange={(e) => setText(e.target.value)} 
                     maxLength={maxLength}
-                    className="w-full min-h-32 max-h-56 p-4 rounded-2xl border-2 border-gray-200 
-                             bg-white/50 backdrop-blur-sm overflow-y-auto resize-none
-                             text-lg placeholder-gray-400
-                             hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 
+                    className="w-full min-h-32 max-h-56 p-4 rounded-2xl border-2 border-cyan-300 
+                             bg-gradient-to-br from-cyan-100/90 via-blue-100/90 to-indigo-100/90 backdrop-blur-sm 
+                             overflow-y-auto resize-none text-lg placeholder-cyan-500 text-cyan-900 font-medium
+                             hover:border-cyan-400 focus:border-cyan-600 focus:ring-4 focus:ring-cyan-200 
                              focus:outline-none transition-all duration-300 
-                             shadow-sm hover:shadow-md focus:shadow-lg" 
+                             shadow-md hover:shadow-lg focus:shadow-xl" 
                     placeholder="Enter your comment" 
                 />
                 
                 {/* Hover effect overlay */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/5 group-hover:to-pink-500/5 transition-all duration-300 pointer-events-none"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500/0 to-blue-500/0 group-hover:from-cyan-500/10 group-hover:to-blue-500/10 transition-all duration-300 pointer-events-none"></div>
                 
                 {/* Character counter */}
                 <div className="absolute bottom-3 right-3">
-                    <span className={`text-sm px-2 py-1 rounded-full ${
+                    <span className={`text-sm px-3 py-1 rounded-full font-medium ${
                         text.length > maxLength * 0.8 
                             ? text.length >= maxLength 
-                                ? 'bg-red-100 text-red-600' 
-                                : 'bg-yellow-100 text-yellow-600'
-                            : 'bg-gray-100 text-gray-600'
+                                ? 'bg-red-200 text-red-700 border border-red-300' 
+                                : 'bg-yellow-200 text-yellow-700 border border-yellow-300'
+                            : 'bg-cyan-200 text-cyan-700 border border-cyan-300'
                     } transition-colors duration-200`}>
                         {text.length}/{maxLength}
                     </span>

@@ -6,14 +6,14 @@ function SubmitAndResetButton({ resetForm }) {
         {/* Submit Button */}
         <button
           className="flex-1 px-8 py-4 rounded-2xl 
-                     bg-gradient-to-r from-blue-500 to-indigo-600 
-                     text-white font-semibold text-lg shadow-lg
-                     hover:from-blue-600 hover:to-indigo-700
-                     hover:shadow-xl hover:scale-[1.02]
-                     focus:outline-none focus:ring-4 focus:ring-blue-300/50
+                     bg-gradient-to-r from-blue-600 via-indigo-700 to-purple-700 
+                     text-white font-bold text-lg shadow-xl
+                     hover:from-blue-700 hover:via-indigo-800 hover:to-purple-800
+                     hover:shadow-2xl hover:scale-[1.02]
+                     focus:outline-none focus:ring-4 focus:ring-blue-300/70
                      active:scale-98
                      transition-all duration-300 ease-out
-                     transform"
+                     transform border-2 border-blue-500/30"
           type="submit"
         >
           <span className="flex items-center justify-center gap-2">
@@ -27,10 +27,11 @@ function SubmitAndResetButton({ resetForm }) {
         {/* Reset Button */}
         <button
           className="flex-1 px-8 py-4 rounded-2xl 
-                     bg-white/80 backdrop-blur-sm border-2 border-gray-200
-                     text-gray-700 font-semibold text-lg shadow-lg
-                     hover:bg-white hover:border-gray-300 hover:shadow-xl hover:scale-[1.02]
-                     focus:outline-none focus:ring-4 focus:ring-gray-300/50
+                     bg-gradient-to-r from-gray-100/95 via-blue-100/90 to-indigo-100/95 backdrop-blur-sm 
+                     border-2 border-gray-300/80 text-gray-800 font-bold text-lg shadow-xl
+                     hover:from-gray-200 hover:via-blue-200 hover:to-indigo-200 hover:border-gray-400 
+                     hover:shadow-2xl hover:scale-[1.02]
+                     focus:outline-none focus:ring-4 focus:ring-gray-300/70
                      active:scale-98
                      transition-all duration-300 ease-out
                      transform"
