@@ -4,23 +4,43 @@ function Comment({text, setText}) {
 
     const maxLength = 200;
 
-
     return (
-        <div className = "flex flex-col items-start gap-2 border-2 border-gray-300 rounded-md p-5 mt-5 w-full ">
-            <h3 className="text-2xl font-bold">Comment (optional)</h3>
+        <div className="space-y-4">
+            <div className="text-center">
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">Comment (optional)</h3>
+                <p className="text-gray-600">Share your thoughts about the selected movie</p>
+            </div>
 
-            <textarea value={text} onChange={(e) => setText(e.target.value)} maxLength={maxLength}
-            className="w-full min-h-28 max-h-56  
-            p-3 rounded-md border-3 border-gray-300
-            overflow-y-auto resize-none          
-            transition duration-200 ease-out
-            focus:outline-none focus:border-blue-500 focus:border-4
-            focus:ring-4 focus:ring-blue-200/60
-            hover:border-blue-400
-            shadow-sm focus:shadow-lg" 
-            placeholder="Enter your comment" />
-
-            <p className="text-sm text-gray-500">{text.length}/{maxLength} characters</p>
+            <div className="group relative">
+                <textarea 
+                    value={text} 
+                    onChange={(e) => setText(e.target.value)} 
+                    maxLength={maxLength}
+                    className="w-full min-h-32 max-h-56 p-4 rounded-2xl border-2 border-gray-200 
+                             bg-white/50 backdrop-blur-sm overflow-y-auto resize-none
+                             text-lg placeholder-gray-400
+                             hover:border-blue-300 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 
+                             focus:outline-none transition-all duration-300 
+                             shadow-sm hover:shadow-md focus:shadow-lg" 
+                    placeholder="Enter your comment" 
+                />
+                
+                {/* Hover effect overlay */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/5 group-hover:to-pink-500/5 transition-all duration-300 pointer-events-none"></div>
+                
+                {/* Character counter */}
+                <div className="absolute bottom-3 right-3">
+                    <span className={`text-sm px-2 py-1 rounded-full ${
+                        text.length > maxLength * 0.8 
+                            ? text.length >= maxLength 
+                                ? 'bg-red-100 text-red-600' 
+                                : 'bg-yellow-100 text-yellow-600'
+                            : 'bg-gray-100 text-gray-600'
+                    } transition-colors duration-200`}>
+                        {text.length}/{maxLength}
+                    </span>
+                </div>
+            </div>
         </div>
     )
 }
