@@ -1,11 +1,20 @@
 import './App.css'
+import { useState } from "react";
+import FormInput from "./components/FormInput";
+
 
 function App() {
-  
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  
   return (
     <>
-      <h1 className="text-3xl font-bold underline text-red-500">Hello World!</h1>
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-4xl font-bold">Information</h1>
+        <FormInput name={name} setName={setName} email={email} setEmail={setEmail} />
+      </div>
     </>
   )
 }
