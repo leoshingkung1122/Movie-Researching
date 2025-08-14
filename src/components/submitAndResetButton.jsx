@@ -1,12 +1,4 @@
-function SubmitAndResetButton({setName, setEmail, setSelectedOption, setText, setErrors}) {
-
-    const handleReset = () => {
-        setName("");
-        setEmail("");
-        setSelectedOption("");
-        setText("");
-        setErrors({});
-      };
+function SubmitAndResetButton({ resetForm }) {
 
     return (
       <div className="flex flex-row gap-4 mt-5 w-full border-2 border-gray-300 rounded-md p-2 justify-center py-5 h-[100px] ">
@@ -37,7 +29,7 @@ function SubmitAndResetButton({setName, setEmail, setSelectedOption, setText, se
                      active:scale-95
                      transition-all duration-300 ease-in-out 
                      "
-        type="reset" onClick={handleReset}
+        type="reset" onClick={resetForm}
         >
           Reset
         </button>
