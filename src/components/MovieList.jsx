@@ -1,18 +1,8 @@
+import movies from "../constants/MovieArray.mjs";
+
+function movieList({selectedOption, setSelectedOption , errors}) {
 
 
-function movieList({selectedOption, setSelectedOption}) {
-
-    
-    const movies = [
-        { title: "Avatar", year: "2009", director: "James Cameron" },
-        { title: "Inception", year: "2010", director: "Christopher Nolan" },
-        { title: "Interstellar", year: "2014", director: "Christopher Nolan" },
-        { title: "The Shawshank Redemption", year: "1994", director: "Frank Darabont" },
-        { title: "Pulp Fiction", year: "1994", director: "Quentin Tarantino" },
-        { title: "Parasite", year: "2019", director: "Bong Joon-ho" }
-      ];
-  
-  
     return (
       <div className="flex flex-col space-y-4  mt-5 border-2 border-gray-300 rounded-md p-5">
         <h3 className="text-2xl font-bold">Select a movie</h3>
@@ -38,6 +28,7 @@ function movieList({selectedOption, setSelectedOption}) {
           <p className="text-xl">{movie.title} ({movie.year}) - {movie.director}</p>
         </label>
       ))}
+      {errors.selectedOption && <p className="text-red-500">{errors.selectedOption}</p>}
     </div>
   );
   }
